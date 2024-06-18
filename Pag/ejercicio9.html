@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+    <link rel="stylesheet" href="./ejercicios.css">
+    <script>
+        function dP(n) {
+            let factores = [];
+            for (let i = 2; i <= n; i++) {
+                while (n % i == 0) {
+                    factores.push(i);
+                    n /= i;
+                }
+            }
+            return factores;
+        }
+
+        function mp() {
+            let n = parseInt(document.getElementById("n").value);
+            if (!isNaN(n) && n > 1) {
+                let factores = dP(n);
+                document.getElementsByName("sa")[0].value = factores.join(", ");
+            } else {
+                document.getElementsByName("sa")[0].value = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Ejercicio 9</h2>
+    <p>Ejercicio 9: Generar los números primos para n.</p>
+    <form>
+        <table border="1" align="center">
+            <tr>
+                <td><p>Numero</p></td>
+                <td><input type="text" id="n"></td>
+            </tr>
+            <tr>
+                <td align="center"><input type="button" value="Primos" onclick="mp();"></td>
+                <td><input type="text" name="sa" readonly></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

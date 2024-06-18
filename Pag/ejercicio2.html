@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="./ejercicios.css">
+    <script lang="javascript" type="text/javascript">
+        function binario() {
+            var n1 = document.formu.op1.value;
+            var n = parseInt(n1);
+            var numerosBinarios = [];
+            for (var i = 0; i < n; i++) {
+                numerosBinarios.push(i.toString(2));
+            }
+            document.formu.ra.value = numerosBinarios.join(", ");
+        }
+    </script>
+<body>
+    <h2>Ejercicio 2</h2>
+    <p>Ejercicio 2: 0,1,10,11,100,101,………</p>
+    <form action="" name="formu">
+        <table border="1" align="center">
+            <tr>
+                <td><p>N°</p></td>
+                <td align="center"><input type="button" value="binario" onclick="binario();" ></td>
+            </tr>
+            <tr>
+                <td>X</td>
+                <td><input type="text" name="op1"></td>
+            </tr>
+            <tr>
+                <td>respuesta:</td>
+                <td><input type="text" name="ra"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

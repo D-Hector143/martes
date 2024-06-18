@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <link rel="stylesheet" href="./ejercicios.css">
+    <script lang="javascript" type="text/javascript">
+        function calcular() {
+            var n = parseInt(document.formu.op1.value);
+            var generacion = [];
+            var suma = 0;
+            for (var i = 1; i <= n; i++) {
+                var factorial = 1;
+                for (var j = 1; j <= i; j++) {
+                    factorial *= j;
+                }
+                generacion.push(i+"!");
+                suma += factorial;
+            }
+            document.formu.generacion.value = generacion.join("+");
+            document.formu.suma.value = suma;
+        }
+    </script>
+</head>
+<body>
+    <h2>Ejercicio 3</h2>
+    <p>Imprimir la generación de los factoriales hasta un N, y calcular la suma. S = 1! + 2! + 3! + ...... + N!</p>
+    
+    <form action="" name="formu">
+        <table border="1" align="center">
+            <tr>
+                <td><input type="button" value="Calcular" onclick="calcular();"></td>
+                <td><input type="text" name="op1"></td>
+            </tr>
+            <tr>
+                <td>Generación:</td>
+                <td><input type="text" name="generacion" readonly></td>
+            </tr>
+            <tr>
+                <td>Suma:</td>
+                <td><input type="text" name="suma" readonly></td>
+            </tr>
+            <tr>
+                
+            </tr>
+        </table>
+    </form>
+
+    
+</body>
+</html>

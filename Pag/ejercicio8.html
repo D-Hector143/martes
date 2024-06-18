@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+    <link rel="stylesheet" href="./ejercicios.css">
+    <script>
+        function p(n) {
+            if (n <= 1) return false;
+            if (n <= 3) return true;
+            if (n % 2 === 0 || n % 3 === 0) return false;
+            var i = 5;
+            while (i * i <= n) {
+                if (n % i === 0 || n % (i + 2) === 0) return false;
+                i += 6;
+            }
+            return true;
+        }
+
+        function vP() {
+            var n = parseInt(document.formu.numero.value);
+            if (p(n)) {
+                document.formu.su.value = `${n} es primo`;
+            } else {
+                document.formu.su.value = `${n} no es primo`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Ejercicio 8</h2>
+    <p>Ejercicio 8: Verificar si un número introducido por teclado es primo</p>
+    <form name="formu">
+        <table border="1" align="center">
+            <tr>
+                <td><p>Numero</p></td>
+                <td><input type="text" name="numero"></td>
+            </tr>
+            <tr>
+                <td align="center"><input type="button" value="Mostrar" onclick="vP();"></td>
+                <td><input type="text" name="su" readonly></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

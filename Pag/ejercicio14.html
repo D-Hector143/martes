@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14</title>
+    <link rel="stylesheet" href="./ejercicios.css">
+    <script lang="javascript" type="text/javascript" src="../Estilos.js" defer></script>
+</head>
+<body>
+    <h2>Ejercicio 14</h2>
+    <p>Ejercicio 14: Realizar una programa calculadora (+,-,/,*,!,xy) con funciones y formularios</p>
+    <form action="" name="formu">
+        <table border="1" align="center">
+            <tr>
+                <td><input type="button" value="+" onclick="suma();"></td>
+                <td><input type="button" value="-" onclick="resta();"></td>
+                <td><input type="button" value="x" onclick="multiplicacion();"></td>
+                <td><input type="button" value="/" onclick="division();"></td>
+                <td><input type="button" value="!" onclick="factorial();"></td>
+                <td><input type="button" value="x^y" onclick="exponente();"></td>
+            </tr>
+            <tr>
+                <td>X</td>
+                <td colspan="5"><input type="text" name="op1"></td>
+            </tr>
+            <tr>
+                <td>Y</td>
+                <td colspan="5"><input type="text" name="op2"></td>
+            </tr>
+            <tr>
+                <td>respuesta:</td>
+                <td colspan="5"><input type="text" name="re"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

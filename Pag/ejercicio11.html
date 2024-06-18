@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+    <link rel="stylesheet" href="./ejercicios.css">
+    <script>
+        function exponente() {
+    var n1 = document.formu.op1.value;
+    var n2 = document.formu.op2.value;
+    var a = parseFloat(n1);
+    var b = parseFloat(n2);
+    if (isNaN(b) || b <= 0) {
+        document.formu.re.value = "NaN";
+        return;
+    }
+    var serie = [a];
+    for (var i = 1; i < b; i++) {
+        serie.push(serie[i - 1] * a);
+    }
+    document.formu.re.value = serie.join(", ");
+}
+    </script>
+</head>
+<body>
+    <h2>Ejercicio 11</h2>
+    <p>Ejercicio 11: Generar la serie exponencial.</p>
+    <form action="" name="formu">
+        <table border="1" align="center">
+            <tr>
+                <td>N:</td>
+                <td colspan="5"><input type="text" name="op1"></td>
+            </tr>
+            <tr>
+                <td>RAZON</td>
+                <td colspan="5"><input type="text" name="op2"></td>
+            </tr>
+            <tr>
+                <td align="center"><input type="button" value="x^y" onclick="exponente();"></td>
+                <td colspan="5"><input type="text" name="re"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

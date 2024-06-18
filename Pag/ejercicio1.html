@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <link rel="stylesheet" href="./ejercicios.css">
+    <script>
+        function fibonacci() {
+            var n1 = document.formu.op1.value;
+            var num = parseInt(n1);
+            if (isNaN(num) || num <= 0) {
+                document.formu.ri.value = "NaN";
+                return;
+            }
+            var a = 0, b = 1, f, result = "0, 1";
+            for (var i = 2; i < num; i++) {
+                f = a + b;
+                result += ", " + f;
+                a = b;
+                b = f;
+            }
+            document.formu.ri.value = result;
+        }
+    </script>
+</head>
+<body>
+    <h2>Ejercicio 1</h2>
+    <p>Ejercicio 1: 0,1,1,2,3,5,8, ……</p>
+    <form action="" name="formu">
+        <table border="1" align="center">
+            <tr>
+                <td><p>N°</p></td>
+                <td align="center"><input type="button" value="serie" onclick="fibonacci();"></td>
+            </tr>
+            <tr>
+                <td>X</td>
+                <td><input type="text" name="op1"></td>
+            </tr>
+            <tr>
+                <td>respuesta:</td>
+                <td><input type="text" name="ri"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

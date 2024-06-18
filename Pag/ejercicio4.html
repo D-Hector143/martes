@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <link rel="stylesheet" href="./ejercicios.css">
+    <script lang="javascript" type="text/javascript">
+        function rotar() {
+            var numero = document.formu.numero.value;
+            var veces = parseInt(document.formu.veces.value);
+
+            var rotacionIzquierda = rotarIzquierda(numero, veces);
+            var rotacionDerecha = rotarDerecha(numero, veces);
+
+            document.formu.rotacionIzquierda.value = rotacionIzquierda;
+            document.formu.rotacionDerecha.value = rotacionDerecha;
+        }
+
+        function rotarIzquierda(numero, veces) {
+            var numeroStr = numero.toString();
+            return parseInt(numeroStr.slice(veces) + numeroStr.slice(0, veces));
+        }
+
+        function rotarDerecha(numero, veces) {
+            var numeroStr = numero.toString();
+            return parseInt(numeroStr.slice(-veces) + numeroStr.slice(0, -veces));
+        }
+    </script>
+</head>
+<body>
+    <h2>Ejercicio 4</h2>
+    <p>Ejercicio 4: Rotar un número por la izquierda y derecha</p>
+    
+    <form action="" name="formu">
+        <table border="1" align="center">
+            <tr>
+                <td><p>Numero</p></td>
+                <td><input type="text" name="numero"></td>
+            </tr>
+            <tr>
+            <tr>
+                <td>Veces a Rotar</td>
+                <td><input type="text" name="veces"></td>
+            </tr>
+                <td>Rotación Izquierda</td>
+                <td><input type="text" name="rotacionIzquierda" readonly></td>
+            </tr>
+            <tr>
+                <td>Rotación Derecha</td>
+                <td><input type="text" name="rotacionDerecha" readonly></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2" align="center"><input type="button" value="Rotar" onclick="rotar();"></td>
+            </tr>
+        </table>
+    </form>
+
+    
+</body>
+</html>
